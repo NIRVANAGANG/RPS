@@ -77,9 +77,14 @@ body {
 
 #choices,
 button {
-  font-size: 2.5em;
+  font-size: 3.5em;
 }
 
+button {
+  border: none;
+  background-image: none;
+  border-radius: 10%;
+}
 #counter {
   display: flex;
   gap: 20px;

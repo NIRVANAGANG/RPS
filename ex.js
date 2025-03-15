@@ -56,7 +56,8 @@ function playGame(playerChoice) {
   ) {
     playerDisplay.textContent = `Player choice:${playerChoice}`;
     compDisplay.textContent = `Computer choice:${computerPick}`;
-    result.textContent = `Result:player has won this round`;
+    result.textContent = `YOU WIN !`;
+    result.setAttribute("style", "color: aqua; font-size: 2.5rem;");
     pCount.textContent = `player Score:${(PlayerScore += 1)}`;
   } else if (
     (computerPick === "rock" && playerChoice === "scissors") ||
@@ -65,12 +66,17 @@ function playGame(playerChoice) {
   ) {
     playerDisplay.textContent = `Player choice:${playerChoice}`;
     compDisplay.textContent = `Computer choice:${computerPick}`;
-    result.textContent = `Result:computer has won this round`;
+    result.textContent = `YOU LOSE !`;
+    result.setAttribute("style", "color: red; font-size: 2rem");
     count.textContent = `Computer Score:${(computerScore += 1)}`;
   } else if (playerChoice === computerPick) {
     playerDisplay.textContent = `Player choice:${playerChoice}`;
     compDisplay.textContent = `Computer choice:${computerPick}`;
     result.textContent = "IT'S A DRAW";
+    result.setAttribute(
+      "style",
+      "color: orange; background: white; font=size: 1.5rem"
+    );
   }
 }
 
