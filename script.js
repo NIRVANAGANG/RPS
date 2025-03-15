@@ -29,6 +29,10 @@
 // }
 
 // PROJECT ROCK PAPER SCISSORS
+//Target the buttons BUTTONS
+let rock = document.querySelector("#rock");
+let paper = document.querySelector("#paper");
+let scissors = document.querySelector("#scissors");
 
 // FUNCTION FOR GETTING THE COMPUTER CHOICE
 function getComputerChoice() {
@@ -40,8 +44,8 @@ function getComputerChoice() {
 
 // FUNCTION FOR GETTING THE HUMAN CHOICE
 function getHumanChoice() {
-  let humanPick = prompt("What is your pick");
-  return humanPick;
+  let game = prompt("Pick a chocie betweeen Rock,Paper and Scissors");
+  return game;
 }
 
 // HUMAN AND COMPUTER SCORE TRACK
@@ -49,60 +53,59 @@ let humanScore = 0;
 let computerScore = 0;
 
 // FUNCTION THAT PLAYS GAME FOR ONE ROUND
-for (i = 0; i <= 5; i++) {
-  function playRound(computerChoice, humanChoice) {
-    return computerChoice, humanChoice;
-  }
 
-  let computerSelection = getComputerChoice();
-  let humanSelection = getHumanChoice();
-  playRound(computerSelection, humanSelection);
+function playRound(computerChoice, humanChoice) {
+  return computerChoice, humanChoice;
+}
 
-  // ALL COMPUTER WIN CONDITIONS
-  if (computerSelection == "Rock" && humanSelection == "Scissors") {
-    console.log(`Computer selection: ${computerSelection}`);
-    console.log(`Human selection: ${humanSelection}`);
-    console.log(`${computerSelection} beats ${humanSelection} computer wins!`);
-    console.log(`Computer score is: ${(computerScore += 1)}`);
-  } else if (computerSelection == "Paper" && humanSelection == "Rock") {
-    console.log(`Computer selection: ${computerSelection}`);
-    console.log(`Human selection: ${humanSelection}`);
-    console.log(`${computerSelection} beats ${humanSelection} computer wins!`);
-    console.log(`Computer score is: ${(computerScore += 1)}`);
-  } else if (computerSelection == "Scissors" && humanSelection == "Paper") {
-    console.log(`Computer selection: ${computerSelection}`);
-    console.log(`Human selection: ${humanSelection}`);
-    console.log(`${computerSelection} beats ${humanSelection} computer wins!`);
-    console.log(`Computer score is: ${(computerScore += 1)}`);
-  } else if (
-    // ALL HUMAN WIN CONDITIONS
-    humanSelection == "Rock" &&
-    computerSelection == "Scissors"
-  ) {
-    console.log(`Computer selection: ${computerSelection}`);
-    console.log(`Human selection: ${humanSelection}`);
-    console.log(`${humanSelection} beats ${computerSelection} human wins!`);
-    console.log(`Human score is: ${(humanScore += 1)}`);
-  } else if (humanSelection == "Paper" && computerSelection == "Rock") {
-    console.log(`Computer selection: ${computerSelection}`);
-    console.log(`Human selection: ${humanSelection}`);
-    console.log(`${humanSelection} beats ${computerSelection} human wins!`);
-    console.log(`Human score is: ${(humanScore += 1)}`);
-  } else if (humanSelection == "Scissors" && computerSelection == "Paper") {
-    console.log(`Computer selection: ${computerSelection}`);
-    console.log(`Human selection: ${humanSelection}`);
-    console.log(`${humanSelection} beats ${computerSelection} human wins!`);
-    console.log(`Human score is: ${(humanScore += 1)}`);
-  } else if (
-    humanSelection == computerSelection ||
-    computerSelection == humanSelection
-  ) {
-    console.log(`computer selection: ${computerSelection}`);
-    console.log(`human selection: ${humanSelection}`);
-    console.log("WE HAVE A DRAW");
-  } else {
-    console.log("Error!! Pick between Rock,Paper or Scissors");
-  }
+let computerSelection = getComputerChoice();
+let humanSelection = getHumanChoice();
+playRound(computerSelection, humanSelection);
+
+// ALL COMPUTER WIN CONDITIONS
+if (computerSelection == "Rock" && humanSelection == "Scissors") {
+  console.log(`Computer selection: ${computerSelection}`);
+  console.log(`Human selection: ${humanSelection}`);
+  console.log(`${computerSelection} beats ${humanSelection} computer wins!`);
+  console.log(`Computer score is: ${(computerScore += 1)}`);
+} else if (computerSelection == "Paper" && humanSelection == "Rock") {
+  console.log(`Computer selection: ${computerSelection}`);
+  console.log(`Human selection: ${humanSelection}`);
+  console.log(`${computerSelection} beats ${humanSelection} computer wins!`);
+  console.log(`Computer score is: ${(computerScore += 1)}`);
+} else if (computerSelection == "Scissors" && humanSelection == "Paper") {
+  console.log(`Computer selection: ${computerSelection}`);
+  console.log(`Human selection: ${humanSelection}`);
+  console.log(`${computerSelection} beats ${humanSelection} computer wins!`);
+  console.log(`Computer score is: ${(computerScore += 1)}`);
+} else if (
+  // ALL HUMAN WIN CONDITIONS
+  humanSelection == "Rock" &&
+  computerSelection == "Scissors"
+) {
+  console.log(`Computer selection: ${computerSelection}`);
+  console.log(`Human selection: ${humanSelection}`);
+  console.log(`${humanSelection} beats ${computerSelection} human wins!`);
+  console.log(`Human score is: ${(humanScore += 1)}`);
+} else if (humanSelection == paper && computerSelection == "Rock") {
+  console.log(`Computer selection: ${computerSelection}`);
+  console.log(`Human selection: ${humanSelection}`);
+  console.log(`${humanSelection} beats ${computerSelection} human wins!`);
+  console.log(`Human score is: ${(humanScore += 1)}`);
+} else if (humanSelection == scissors && computerSelection == "Paper") {
+  console.log(`Computer selection: ${computerSelection}`);
+  console.log(`Human selection: ${humanSelection}`);
+  console.log(`${humanSelection} beats ${computerSelection} human wins!`);
+  console.log(`Human score is: ${(humanScore += 1)}`);
+} else if (
+  humanSelection == computerSelection ||
+  computerSelection == humanSelection
+) {
+  console.log(`computer selection: ${computerSelection}`);
+  console.log(`human selection: ${humanSelection}`);
+  console.log("WE HAVE A DRAW");
+} else {
+  console.log("Error!! Pick between Rock,Paper or Scissors");
 }
 
 if (humanScore > computerScore) {
